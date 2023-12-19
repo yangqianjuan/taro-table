@@ -1,50 +1,39 @@
 
+.scrollview{
+    table-layout:fixed;
+    border: 1px solid #000;
+}
 .table {
     border: 0px solid darkgray;
     border-radius:5px;
     font-size: 22rpx;
     color: #333;
-    // width: 100%;
-    // padding-top: 50px;
-    height: 300px;
-    overflow: auto;
-    // overflow-y: hidden;
-    table-layout:fixed;
     }
     .tr {
     display: flex;
-    // flex-direction: row;
-    // width: 100%;
-    justify-content: center;
-    // align-items: center;
-    // border-bottom: 1px solid #F7F7F7;
-    flex-wrap: nowrap;
+    // text-align: center;
+    border-bottom: 1px solid #F7F7F7;
     }
 
     .td {
-        justify-content: center;
-        text-align: center;
         border-right: 1px solid #F7F7F7;
         border-left: 1px solid #F7F7F7;
+        box-sizing: border-box;
         border-bottom: 1px solid #F7F7F7;
-        align-items: center;
         display: flex;
-        // flex: 1 0 auto;
+        flex: 1 0 auto;
         flex-shrink: 0;
         height: 50px;
-        // white-space: pre-wrap;
+        line-height: 50px;
+        text-align: center;
         }
 
 .th{
-    // flex: 1 0 auto;
-    flex-shrink: 0;
+    flex: 1 0 auto;
     height: 50px;
-    // height: 100%;
     line-height: 100%;
-    // vertical-align: middle;
-    background:#ffd6414b;
-    // vertical-align: middle;
-    // vertical-align: baseline;
+    background-color: #FFF;
+
 }
     .bg-line{
     background: #FFF;
@@ -52,20 +41,44 @@
     }
 
     .bg-header {
-    justify-content: center;
-    // background:#ffd6414b;;
     color: #333;
     display: flex;
     height: 50px;
     align-items: center;
-    text-align: center;
-  
+    position: sticky;
+    top: 0px;
+    background-color: #FFF;
+
     }
-    .mask{
+    .sticky-header {
+        display: flex;
         position: sticky;
-        top: 0px;
-        background-color: #FFF;
+        left: 0;
+        top: 0;
+        flex-direction: column;
+      }
+ .mask{
+    // display: inline-block;
+    background:#ffd6414b;
+    height: 100%;
+    line-height: 100%;
+    vertical-align: middle;
+ }
+
+    .loading{
+height: 50rpx;
     }
-    .aaa{
-        background-color: #30cc00;
+    .arrow{
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        margin-left: 2px;
+        border-top: 2px #000 solid;
+        border-right: 2px #000 solid;
+    }
+    .des{
+        transform: rotate(-45dge)
+    }
+    .asc{
+        transform: rotate(135dge)
     }

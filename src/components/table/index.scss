@@ -1,18 +1,19 @@
 
-.scrollview{
-    table-layout:fixed;
-    border: 1px solid #000;
-}
+
 .table {
     border: 0px solid darkgray;
     border-radius:5px;
     font-size: 22rpx;
     color: #333;
+    // overflow-x: auto;
+    // overflow-y: visible;
+    // height: 100%;
     }
     .tr {
     display: flex;
-    // text-align: center;
     border-bottom: 1px solid #F7F7F7;
+    // justify-content: center;
+    // text-align: center;
     }
 
     .td {
@@ -22,8 +23,6 @@
         border-bottom: 1px solid #F7F7F7;
         display: flex;
         flex: 1 0 auto;
-        flex-shrink: 0;
-        height: 50px;
         line-height: 50px;
         text-align: center;
         }
@@ -33,7 +32,6 @@
     height: 50px;
     line-height: 100%;
     background-color: #FFF;
-
 }
     .bg-line{
     background: #FFF;
@@ -44,30 +42,27 @@
     color: #333;
     display: flex;
     height: 50px;
-    align-items: center;
+    text-align: center;
+    // align-items: center;
     position: sticky;
     top: 0px;
     background-color: #FFF;
-
+    // position: fixed;
     }
-    .sticky-header {
-        display: flex;
-        position: sticky;
-        left: 0;
-        top: 0;
-        flex-direction: column;
-      }
+    // .sticky-header {
+    //     display: flex;
+    //     position: sticky;
+    //     left: 0;
+    //     top: 0;
+    //   }
  .mask{
     // display: inline-block;
     background:#ffd6414b;
-    height: 100%;
-    line-height: 100%;
+    line-height: 50px;
     vertical-align: middle;
  }
 
-    .loading{
-height: 50rpx;
-    }
+
     .arrow{
         display: inline-block;
         width: 5px;

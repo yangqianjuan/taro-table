@@ -29,21 +29,21 @@ export default function Index() {
       dataIndex: "dbd",
       width: "20%",
     },
-      {
-        title: "达标度",
-        dataIndex: "dbd",
-        width: "20%",
-      },
-      {
-        title: "达标度",
-        dataIndex: "dbd",
-        width: "20%",
-      },
-        {
-          title: "达标度",
-          dataIndex: "dbd",
-          width: "20%",
-        },
+    {
+      title: "达标度",
+      dataIndex: "dbd",
+      width: "20%",
+    },
+    {
+      title: "达标度",
+      dataIndex: "dbd",
+      width: "20%",
+    },
+    {
+      title: "达标度",
+      dataIndex: "dbd",
+      width: "20%",
+    },
   ];
   const exampledataSource = [
     {
@@ -113,26 +113,30 @@ export default function Index() {
   const [dataSource, setDataSource] = useState([]);
   const [columns, setColumns] = useState([]);
   const initData = () => {
-    setDataSource(exampledataSource);
+    //初始化的时候多请求一些数据
+    setDataSource([...exampledataSource,...exampledataSource,...exampledataSource]);
     setColumns(examplecolumns);
-    setLoading(false);
     setLoading(false);
     setEnd(false);
     setCurrent(1);
   };
   useEffect(() => {
-    initData();
+    setTimeout(()=>{
+        initData();
+    },3000)
   }, []);
 
   useEffect(() => {
+   setTimeout(()=>{
     if (current < 10) {
-      setDataSource((data) => [...data, ...exampledataSource]);
-      setLoading(false);
-    } else {
-      console.log("没有数据啦");
-      setEnd(true);
-      setLoading(false);
-    }
+        setDataSource((data) => [...data, ...exampledataSource]);
+        setLoading(false);
+      } else {
+        console.log("没有数据啦");
+        setEnd(true);
+        setLoading(false);
+      }
+   },3000)
   }, [current]);
   const handleChangeColumns = (title, value) => {
     const newCloums = columns.map((item) => {
@@ -157,7 +161,7 @@ export default function Index() {
   };
   const scrollStyle = {
     height: "100vh",
-    // width: "100%",
+    width: "100%",
   };
   const scrollTop = 0;
   const Threshold = 20;
@@ -165,6 +169,7 @@ export default function Index() {
     <ScrollView
       className="scrollview"
       scrollY
+      scrollX
       scrollWithAnimation
       scrollTop={scrollTop}
       style={scrollStyle}
@@ -181,7 +186,7 @@ export default function Index() {
           dataSource={dataSource}
           changeColumns={handleChangeColumns}
         />
-        {loading && <View className="loading">加载中....</View>}
+        {loading && <View className="loading">加载中。。。</View>}
         {isEnd && <View className="loading">欧吼，加载完了。。。。</View>}
       </View>
     </ScrollView>

@@ -25,17 +25,14 @@ export default function AtTable(props) {
               >
                 {item.title}
                 {item.sort && (
-                  <View
-                    className={[
-                      "arrow",
-                      item.sort === "des" ? "des" : "asc",
-                    ].join(" ")}
-                    style={{
-                      transform: `rotate(${
-                        item.sort === "des" ? 135 : -45
-                      }deg)`,
-                    }}
+                  <view className={["sort",item.sort === "des" ? "des" : "asc",]}>
+                    <View
+                    className='arrow arrow-top'
                   ></View>
+                   <View
+                   className='arrow arrow-bottom'
+                  ></View>
+                  </view>
                 )}
               </view>
             </View>

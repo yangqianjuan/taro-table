@@ -164,7 +164,7 @@ export default function Index() {
     width: "100%",
   };
   const scrollTop = 0;
-  const Threshold = 20;
+  const Threshold = 50;
   return (
     <ScrollView
       className="scrollview"
